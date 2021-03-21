@@ -71,12 +71,12 @@ export type DayLayoutFunction<TEvent extends object = Event> = (_: {
 }) => Array<{ event: TEvent, style: React.CSSProperties }>;
 export type DayLayoutAlgorithm = 'overlap' | 'no-overlap';
 export type NavigateAction = 'PREV' | 'NEXT' | 'TODAY' | 'DATE';
-export interface Event {
+export interface Event<T = any> {
     allDay?: boolean;
     title?: string;
     start?: Date;
     end?: Date;
-    resource?: any;
+    resource?: T;
 }
 export interface DateRange {
     start: Date;
